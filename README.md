@@ -22,13 +22,13 @@ The Exam Venue Inquiry System is a web application that helps students to check 
 
 1. Clone the repository:
 
-```
+```bash
 git clone https://github.com/ryankwondev/ExamVenueInquirySystem.git
 ```
 
 2. Install the required packages:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -36,7 +36,7 @@ pip install -r requirements.txt
 
 4. Run the application:
 
-```
+```bash
 uvicorn main:app --reload
 ```
 
@@ -48,7 +48,7 @@ Open your browser and navigate to `http://localhost:8000` to access the Exam Ven
 
 Create a `.env` file in the root directory of the project and configure the following variables:
 
-```
+```env
 DB_HOST=your_database_host
 DB_NAME=your_database_name
 DB_USER=your_database_user
@@ -63,7 +63,7 @@ Replace the placeholders with your actual values.
 
 The application supports PostgreSQL only. Use the following schema to create the required table:
 
-```
+```sql
 create table public.examroom (
   code text,
   subject text,
