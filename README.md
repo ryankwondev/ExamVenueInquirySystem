@@ -64,13 +64,12 @@ Replace the placeholders with your actual values.
 The application supports PostgreSQL only. Use the following schema to create the required table:
 
 ```
-create table public.examroom
-(
-code text,
-subject text,
-date text,
-period text,
-room text
+create table public.examroom (
+  code text,
+  subject text,
+  date text,
+  period text,
+  room text
 );
 ```
 
