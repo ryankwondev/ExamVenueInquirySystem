@@ -23,7 +23,7 @@ The Exam Venue Inquiry System is a web application that helps students to check 
 1. Clone the repository:
 
 ```
-git clone https://github.com/yourusername/ExamVenueInquirySystem.git
+git clone https://github.com/ryankwondev/ExamVenueInquirySystem.git
 ```
 
 2. Install the required packages:
