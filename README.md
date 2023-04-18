@@ -9,6 +9,7 @@ The Exam Venue Inquiry System is a web application that helps students to check 
 - [Usage](#usage)
 - [Environment Variables](#environment-variables)
 - [Database Schema](#database-schema)
+- [Deploy](#deploy)
 - [License](#license)
 
 ## Features
@@ -72,6 +73,37 @@ create table public.examroom (
   room text
 );
 ```
+
+## Deploy
+
+### Prerequisites
+
+- A domain (e.g. example.com) pointing to your server
+- Caddy server installed on your server (https://caddyserver.com/docs/install)
+
+### Instructions
+
+1. SSH into your server.
+
+2. Install Caddy server following the instructions from the [official documentation](https://caddyserver.com/docs/install).
+
+3. Create a Caddyfile with the reverse proxy configuration. Replace `example.com` with your domain, and `:8080` with the port your FastAPI application is running on.
+
+```
+example.com {
+  reverse_proxy * :8080
+} 
+```
+
+4. Save the Caddyfile in a directory of your choice (e.g. `/etc/caddy/Caddyfile`).
+
+5. Start the Caddy server with the following command (assuming you saved the Caddyfile in `/etc/caddy/Caddyfile`):
+
+```
+sudo caddy start --config /etc/caddy/Caddyfile
+```
+
+6. Your FastAPI application should now be accessible through your domain (e.g. `https://example.com`).
 
 ## License
 
