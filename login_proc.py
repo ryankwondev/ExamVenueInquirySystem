@@ -1,3 +1,5 @@
+from random import randint
+
 import requests
 
 
@@ -13,7 +15,7 @@ def get_personal_code(login_id, login_pw):
     session.get(url_login_page)
 
     url_login_proc = 'https://hi.hana.hs.kr/proc/login_proc.asp'
-    login_data = {'login_id': login_id, 'login_pw': login_pw, 'x': '28', 'y': '55'}
+    login_data = {'login_id': login_id, 'login_pw': login_pw, 'x': str(randint(10, 99)), 'y': str(randint(10, 99))}
     session.post(url_login_proc, headers={'Referer': url_login_page}, data=login_data)
 
     url_mypage = 'https://hi.hana.hs.kr/SYSTEM_Member/Member/MyPage/mypage.asp'
