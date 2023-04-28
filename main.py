@@ -46,7 +46,7 @@ async def inquiry():
 @app.post("/intranet_login")
 async def intranet_login(data: IntranetLoginData, response: Response):
     try:
-        code = login_proc.get_personal_code(data.login_id, data.login_pw)
+        code = await login_proc.get_personal_code(data.login_id, data.login_pw)
         if code == "E html":
             response.status_code = status.HTTP_404_NOT_FOUND
             return {"message": "로그인에 실패했습니다. 아이디와 비밀번호를 확인해주세요."}

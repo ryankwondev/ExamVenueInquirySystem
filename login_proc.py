@@ -1,7 +1,7 @@
 import requests
 
 
-def get_personal_code(login_id, login_pw):
+async def get_personal_code(login_id, login_pw):
     user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
     headers = {'User-Agent': user_agent,
                'Accept': "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"}
